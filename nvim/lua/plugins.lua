@@ -78,13 +78,22 @@ return {
                 vim.lsp.buf.format { async = true }
             end, bufopts)
             vim.diagnostic.config({
+                -- Insert floaty things to the right of problems.
                 virtual_text = true,
+                -- Display icony things in the sign column.
                 signs = true,
+                -- Change from neovim's default sort mode for signs, which tends
+                -- to hide errors, to the one that should obviously be the
+                -- default, which shows most severe in preference to least.
                 severity_sort = true,
+                -- Underline problems.
                 underline = true,
+                -- Border, but not extreme border, on popups.
                 float = { border = "single" },
             })
+            -- Unicode: it's fun�
             local signs = { Error = "✖️ ", Warn = "⚠️ ", Hint = "💡", Info = "ℹ️ " }
+            -- Wire each sign up to avoid repeating the sign_define call
             for type, icon in pairs(signs) do
                 local hl = "DiagnosticSign" .. type
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -92,19 +101,28 @@ return {
         end
     },
 
+    -- Treesitter provides better parsing than vim's historical "regexes can
+    -- parse any language right" stuff. It represents an intermediate stage
+    -- between that old tech, and LSP-generated semantic markup.
+    --
+    -- Probably the best explanation I can find is:
     -- https://www.josean.com/posts/nvim-treesitter-and-textobjects
     {
         'nvim-treesitter/nvim-treesitter',
+        -- Recompile grammars if required.
         build = ':TSUpdate',
         config = function()
             local configs = require('nvim-treesitter.configs')
 
             configs.setup({
+                -- At minimum I'm going to need these grammars:
                 ensure_installed = {
                     "rust",
                     "c",
                 },
                 highlight = {
+                    -- Treesitter should be used to parse files for highlighting
+                    -- purposes, overriding the historical stuff.
                     enable = true,
                 },
             })
@@ -115,11 +133,13 @@ return {
     -- ask nvim-lspconfig to set up rust-analyzer.
     {
         "mrcjkb/rustaceanvim",
-        version = "^4", -- Recommended
+        version = "^4",
+        -- Only bother with this on rust files.
         ft = { "rust" },
         opts = {
             server = {
                 on_attach = function(_, bufnr)
+                    -- TODO: I'm not actually sure why these are here.
                     vim.keymap.set("n", "<leader>cR", function()
                         vim.cmd.RustLsp("codeAction")
                     end, { desc = "Code Action", buffer = bufnr })
@@ -131,8 +151,14 @@ return {
                     -- rust-analyzer language server configuration
                     ["rust-analyzer"] = {
                         cargo = {
+                            -- Force all features on to try and ensure that we
+                            -- build all the code.
                             allFeatures = true,
+                            -- Can't find this in the rust-analyzer docs, but it
+                            -- seems to help with proc-macros?
                             loadOutDirsFromCheck = true,
+                            -- Allow code we're editing to run arbitrary code on
+                            -- our computer
                             runBuildScripts = true,
                         },
                         -- Add clippy lints for Rust.
@@ -144,6 +170,8 @@ return {
                         procMacro = {
                             enable = true,
                             ignored = {
+                                -- I inherited this list of ignored macros, need
+                                -- to revisit.
                                 ["async-trait"] = { "async_trait" },
                                 ["napi-derive"] = { "napi" },
                                 ["async-recursion"] = { "async_recursion" },
