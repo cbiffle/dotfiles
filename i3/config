@@ -41,8 +41,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 10%+
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 10%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightr -e 2 up 10
+bindsym XF86MonBrightnessDown exec --no-startup-id brightr -e 2 down 10
 
 bindsym $mod+p exec --no-startup-id gopass ls --flat | dmenu -fn 'Source Code Pro-12' -p 'Pass:' -sb "#F0C674" -sf "#000" -b | xargs --no-run-if-empty gopass show -f | head -n 1 | xdotool type --clearmodifiers --file -
 
