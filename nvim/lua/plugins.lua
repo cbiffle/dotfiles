@@ -282,6 +282,8 @@ return {
                     ["@lsp.typemod.variable.mutable"] = {
                         link = "@lsp.mod.mutable",
                     },
+
+		    ["gitcommitSummary"] = { style = {"bold"}},
                 }
             end,
             integrations = {
