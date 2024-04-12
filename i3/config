@@ -200,18 +200,38 @@ bindsym $mod+Ctrl+r mode "resize"
 
 focus_follows_mouse no
 
+
+set $c_rosewater #f5e0dc
+set $c_flamingo #f2cdcd
+set $c_pink #f5c2e7
+set $c_mauve #cba6f7
+set $c_red #f38ba8
+set $c_maroon #eba0ac
+set $c_peach #fab387
+set $c_yellow #f9e2af
+set $c_green #a6e3a1
+set $c_teal #94e2d5
+set $c_sky #89dceb
+set $c_sapphire #74c7ec
+set $c_blue #89b4fa
+set $c_lavender #b4befe
+set $c_surface0 #313244
+set $c_surface2 #585b70
+set $c_text #cdd6f4
+set $c_subtext0 #a6adc8
+
 # Color meanings as I understand them:
 # - border: the border around the window _title_
 # - background: background of window title
 # - text: text color in window title
 # - indicator: showing where a new window will be opened and possibly some other things
 # - child_border: the actual border around the window
-# class                 border  backgr. text    indicator child_border
-client.focused          #F0C674 #F0C674 #000000 #f0b137   #F0C674
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #282A2E #282A2E #707880 #292d2e   #282A2E
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+# class                 border      backgr.    	text        indicator   child_border
+client.focused          $c_mauve    $c_mauve  	#000000     $c_mauve    $c_mauve
+client.focused_inactive $c_surface2 $c_surface2 $c_text     $c_surface2 $c_surface2
+client.unfocused        $c_surface2 $c_surface0 $c_subtext0 $c_surface0 $c_surface0
+client.urgent           $c_yellow   $c_yellow   #000000     $c_yellow   $c_yellow
+client.placeholder      #000000     #0c0c0c     #ffffff     #000000     #0c0c0c
 
 client.background       #000000
 
