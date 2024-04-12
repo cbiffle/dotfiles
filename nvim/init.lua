@@ -7,6 +7,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 -- Unless told otherwise, my files are 80 columns wide.
 vim.opt.textwidth = 80
+-- Use information about the current buffer to update the terminal title.
+vim.opt.title = true
 
 -- Things that default to "off" currently that I want to leave off:
 -- - smartindent: really annoying
