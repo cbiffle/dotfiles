@@ -236,6 +236,9 @@ return {
                     ["@lsp.type.enumMember"] = {
                         style = {"bold"},
                     },
+		    -- Just use keyword highlighting for self, thanks
+		    ["@lsp.type.selfKeyword"] = { link = "Keyword" },
+		    ["@variable.builtin"] = { link = "Keyword" },
                     -- Make ? more obvious.
                     ["@lsp.typemod.operator.controlFlow"] = {
                         fg = colors.red,
