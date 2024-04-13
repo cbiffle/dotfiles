@@ -44,7 +44,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec --no-startup-id brightr -e 2 up 10
 bindsym XF86MonBrightnessDown exec --no-startup-id brightr -e 2 down 10
 
-bindsym $mod+p exec --no-startup-id gopass ls --flat | dmenu -fn 'Source Code Pro-12' -p 'Pass:' -sb "#F0C674" -sf "#000" -b | xargs --no-run-if-empty gopass show -f | head -n 1 | xdotool type --clearmodifiers --file -
+bindsym $mod+p exec --no-startup-id gopass ls --flat | dmenu -fn 'Source Code Pro-12' -p 'Pass:' -sb "#cba6f7" -sf "#000" -b | xargs --no-run-if-empty gopass show -f | head -n 1 | xdotool type --clearmodifiers --file -
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -64,7 +64,7 @@ bindsym $mod+Shift+q kill
 bindsym button2 kill
 
 # start dmenu (a program launcher)
-bindsym $mod+r exec --no-startup-id dmenu_run -fn 'Source Code Pro-12' -p 'Run:' -sb "#F0C674" -sf "#000" -b
+bindsym $mod+r exec --no-startup-id dmenu_run -fn 'Source Code Pro-12' -p 'Run:' -sb "#cba6f7" -sf "#000" -b
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
