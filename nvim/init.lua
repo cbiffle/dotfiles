@@ -9,6 +9,9 @@ vim.opt.expandtab = true
 vim.opt.textwidth = 80
 -- Use information about the current buffer to update the terminal title.
 vim.opt.title = true
+-- Right-click extends selection instead of manifesting the world's least useful
+-- popup menu
+vim.opt.mousemodel = "extend"
 
 -- Things that default to "off" currently that I want to leave off:
 -- - smartindent: really annoying
