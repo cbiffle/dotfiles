@@ -12,3 +12,13 @@ normal = {family="Noto Sans Mono", style="Regular"}
 #normal = {family="Inconsolata", style="Regular"}
 #normal = {family="JetBrains Mono", style="Regular"}
 #normal = {family="Iosevka SS09", style="Regular"}
+
+[[hints.enabled]]
+binding = { key = "U", mods = "Control|Shift" }
+command = "xdg-open"
+hyperlinks = true
+mouse.enabled = true
+mouse.mods = "Control"
+post_processing = true
+persist = false
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩‘]+"
