@@ -7,7 +7,7 @@ local rust_analyzer_settings = {
     cargo = {
         -- Force all features on to try and ensure that we
         -- build all the code.
-        allFeatures = true,
+        --allFeatures = true,
         -- Can't find this in the rust-analyzer docs, but it
         -- seems to help with proc-macros?
         loadOutDirsFromCheck = true,
@@ -17,7 +17,7 @@ local rust_analyzer_settings = {
     },
     -- Add clippy lints for Rust.
     checkOnSave = {
-        allFeatures = true,
+        --allFeatures = true,
         command = "clippy",
         extraArgs = { "--no-deps" },
     },
