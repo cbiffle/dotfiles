@@ -120,6 +120,7 @@ return {
                 ensure_installed = {
                     "rust",
                     "c",
+                    "markdown_inline",
                 },
                 highlight = {
                     -- Treesitter should be used to parse files for highlighting
