@@ -1,6 +1,6 @@
 include catppuccin-mocha
 
-font pango:Source Code Pro 10
+font pango:Iosevka 11
 
 # target                 title     bg        text   indicator  border
 client.focused           $lavender $lavender $base  $rosewater $lavender
