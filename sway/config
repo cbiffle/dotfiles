@@ -25,8 +25,7 @@ set $right l
 # Your preferred terminal emulator
 set $term kitty
 # Your preferred application launcher
-set $menu wmenu-run
-
+set $menu wmenu-run -f 'Iosevka 15' -b -N 313244 -S 94e2d5 -n cdd6f4 -s 1e1e2e -p '>' -M 313244 -m 94e2d5
 exec nm-applet
 
 ### Idle configuration
