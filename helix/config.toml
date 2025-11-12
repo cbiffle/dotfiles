@@ -41,3 +41,20 @@ insert = "bar"
 '(' = ')'
 '[' = ']'
 '{' = '}'
+
+[keys.normal]
+# Enable tab as structure-aware forward nav
+tab = "move_parent_node_end"
+# Enable Shift-tab as structure-aware backward nav
+S-tab = "move_parent_node_start"
+
+[keys.insert]
+# tab is already forward nav due to smart-tab
+# Also enable backward nav
+S-tab = "move_parent_node_start"
+# Allow inserting a tab anywhere with ^Tab, overrides smarts
+C-tab = "insert_tab"
+
+[keys.select]
+tab = "extend_parent_node_end"
+S-tab = "extend_parent_node_start"
