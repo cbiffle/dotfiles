@@ -1,0 +1,43 @@
+theme = "myppuccin"
+
+[editor]
+rulers = [80]
+
+# Color the mode indicator to match the cursor.
+color-modes = true
+
+# Remove extra gutters, save space
+gutters = ["diagnostics"]
+
+# Highlight any line containing a cursor.
+cursorline = true
+
+trim-final-newlines = true
+trim-trailing-whitespace = true
+
+# Show all diagnostics at the end of the line
+end-of-line-diagnostics = "hint"
+
+popup-border = "all"
+auto-format = false
+
+[editor.inline-diagnostics]
+# Expand info+ diagnostics
+cursor-line = "info"
+
+[editor.whitespace.render]
+tab = "all"
+
+[editor.whitespace.characters]
+tab = "→"
+
+[editor.indent-guides]
+render = true
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.auto-pairs]
+'(' = ')'
+'[' = ']'
+'{' = '}'

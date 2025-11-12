@@ -1,0 +1,18 @@
+inherits = "catppuccin_mocha"
+
+"comment" = {fg="blue", modifiers = ["italic"]}
+"variable.other.member" = "text"
+"function" = {fg="text", modifiers = ["bold"]}
+"variable.parameter" = {fg="text", modifiers=["italic"]}
+"variable.builtin" = {fg="pink"}
+
+# darken background to improve contrast
+"ui.background" = {bg = "#101020"}
+
+# divisions between splits
+"ui.window" = {fg="surface2"}
+
+error = {fg = "red", modifiers = ["italic"]}
+warning = {fg = "yellow", modifiers = ["italic"]}
+info = {fg = "sky", modifiers = ["italic"]}
+hint = {fg = "teal", modifiers = ["italic"]}
